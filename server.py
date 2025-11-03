@@ -17,7 +17,7 @@ app.add_middleware(
 class QueryRequest(BaseModel):
     query: str
 
-@app.api_route("/query", methods=["POST"])
+@app.api_route("/query", methods=["POST", "OPTIONS"])
 def handle_query(request: QueryRequest):
     query_engine = QueryEngine()
     response = query_engine.query(request.query)
