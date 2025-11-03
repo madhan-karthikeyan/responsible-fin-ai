@@ -46,7 +46,7 @@ export default function ChatPage() {
 
     try {
       // TODO: Replace with your actual API endpoint
-      const API_URL = "https://qcwwmcfr-8000.inc1.devtunnels.ms/query" // <-- PASTE YOUR API URL HERE
+      const API_URL = "http://127.0.0.1:8000/query" // <-- PASTE YOUR API URL HERE
 
       console.log("[v0] Attempting to fetch from:", API_URL)
       console.log("[v0] Sending query:", content)

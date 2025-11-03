@@ -9,10 +9,10 @@ class QueryEngine:
     def __init__(self):
         Settings.embed_model = HuggingFaceEmbedding(model_name="sentence-transformers/all-MiniLM-L6-v2")
         Settings.llm = Ollama(
-            model="llama3",
+            model="gpt-oss:20b-cloud",
             verbose=False
         )
-
+        self.llm = "gpt-oss:20b-cloud"
         chroma_client = chromadb.PersistentClient(path="./chroma_db")
         chroma_collection = chroma_client.get_or_create_collection("finance_docs")
 
@@ -50,7 +50,8 @@ class QueryEngine:
         response = self.query_engine.query(query)
         print("Answer:\n", response)
         return response
-
+    def get_model_name(self):
+        return self.llm
 # print("\nSource Nodes:")
 # for node in response.source_nodes:
 #     print(node)
