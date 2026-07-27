@@ -28,7 +28,7 @@ class QueryEngine:
         Settings.embed_model = HuggingFaceEmbedding(model_name=embedding_model)
 
         # Build the low-level Ollama HTTP client with Authorization header
-        ollama_api_key = "2cdfccfe5c27415a8c98bdcb987ed348.M9tYkFRYwkSyZ7mnFQm4Cq8q"
+        ollama_api_key = "" # Key here
         if not ollama_api_key:
             raise RuntimeError("Please set OLLAMA_API_KEY in environment before running")
 
